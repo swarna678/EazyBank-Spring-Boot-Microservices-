@@ -1,0 +1,15 @@
+package com.eazybytes.accounts.dto;
+
+import jakarta.persistence.Column;
+
+public class CustomerDto {
+	@Column(name ="name")
+    private String name;
+
+    @Column(name ="email")
+    private String email;
+
+    @Column(name="mobile_number")
+    private String mobileNumber;
+
+}
