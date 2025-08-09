@@ -2,6 +2,7 @@
 <section name="Workbench">
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="C:\Users\Swarna Latha\Spring tool suit\configserver"/>
 			<item value="C:\Users\Swarna Latha\Spring tool suit"/>
 			<item value="C:\Users\Swarna Latha\microservices\section 2\accounts"/>
 		</list>
