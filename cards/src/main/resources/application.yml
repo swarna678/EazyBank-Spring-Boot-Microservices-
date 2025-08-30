@@ -5,7 +5,7 @@ spring:
  application:
   name: "cards"
  profiles:
-  active: "qa"
+  active: "prod"
  config:
   import: "optional:configserver:http://localhost:8071/"
 
@@ -23,4 +23,14 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+ rabbitmq:
+  host: "localhost"
+  port: 5672
+  username: "guest"
+  password: "guest"
  
+management:
+ endpoints:
+  web:
+   exposure:
+    include: "*"

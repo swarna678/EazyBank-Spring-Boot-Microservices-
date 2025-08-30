@@ -9,11 +9,14 @@ import io.swagger.v3.oas.annotations.info.License;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 import com.eazybytes.loans.dto.LoansContactInfoDto;
 
 @SpringBootApplication
+@RefreshScope
+
 /*@ComponentScans({ @ComponentScan("com.eazybytes.loans.controller") })
 @EnableJpaRepositories("com.eazybytes.loans.repository")
 @EntityScan("com.eazybytes.loans.model")*/
