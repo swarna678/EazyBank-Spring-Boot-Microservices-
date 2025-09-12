@@ -1,29 +1,104 @@
 
+#server:
+#  port: 9000
+#spring:
+# application:
+#  name: "cards"
+# profiles:
+#  active: "prod"
+# datasource:
+#  url: jdbc:mysql://localhost:3309/cardsdb
+#  username: root
+#  password: root
+# jpa:
+#  show-sql: true
+# sql:
+#  init:
+#    mode: always
+# config:
+#  import: "optional:configserver:http://localhost:8071/"
+# 
+#management:
+# endpoints:
+#  web:
+#   exposure:
+#    include: "*"
+
+
+
+#server:
+#  port: 8080
+#
+#spring:
+#  application:
+#    name: "accounts"
+#  profiles:
+#    active: "prod"
+#  datasource:
+#   url: jdbc:mysql://localhost:3307/accountsdb
+#   username: root
+#   password: root
+#  jpa:
+#   show-sql: true
+#  sql:
+#    init:
+#      mode: always
+#  config:
+#    import: "optional:configserver:http://localhost:8071/"
+#management:
+# endpoints:
+#  web:
+#   exposure:
+#    include: "*"
+
+#if we want to use mysql use above application.yml below for h2 database 
+
 server:
   port: 9000
 spring:
- application:
-  name: "cards"
- profiles:
-  active: "prod"
- datasource:
-  url: jdbc:mysql://localhost:3309/cardsdb
-  username: root
-  password: root
- jpa:
-  show-sql: true
- sql:
-  init:
-    mode: always
- config:
-  import: "optional:configserver:http://localhost:8071/"
+  application:
+    name: "cards"
+  profiles:
+    active: "prod"
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password: ''
+  h2:
+    console:
+      enabled: true
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  config:
+    import: "optional:configserver:http://localhost:8071/"
 
-
- 
-
- 
 management:
- endpoints:
-  web:
-   exposure:
-    include: "*"
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    shutdown:
+     enabled: true
+  info:
+    env:
+      enabled: true
+
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    fetchRegistry: true
+    registerWithEureka: true
+    serviceUrl:
+      defaultZone: http://localhost:8070/eureka/
+
+info:
+  app:
+    name: "cards"
+    description: "Eazy Bank cards Application"
+    version: "2.0.0"

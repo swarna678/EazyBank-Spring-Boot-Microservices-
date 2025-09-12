@@ -1,1 +1,23 @@
-/.metadata/
+# Ignore Eclipse/STS workspace metadata
+.metadata/
+*.tmp
+*.bak
+*.swp
+
+# Ignore Eclipse project settings
+.project
+.classpath
+.settings/
+
+# Ignore IntelliJ IDEA project files
+.idea/
+*.iml
+
+# Ignore build output
+target/
+bin/
+build/
+
+# Ignore OS files
+.DS_Store
+Thumbs.db

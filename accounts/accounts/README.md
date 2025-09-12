@@ -23,5 +23,10 @@ http://localhost:8080/actuator/health/readiness
 
 http://localhost:8071/accounts/prod - for application.properties
 
+http://localhost:8080/actuator/shutdown for shutdown without killling process using post method 
+
+
+http://localhost:8070 for eurekaserver
+http://localhost:8070/eureka/apps for eurekaserverinstances in xmlformat
 
 
