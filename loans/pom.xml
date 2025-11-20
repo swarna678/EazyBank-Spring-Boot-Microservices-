@@ -117,7 +117,7 @@
                 <version>3.4.2</version>
                 <configuration>
                     <to>
-                        <image>swarna783/${project.artifactId}:second-service-s8</image>
+                        <image>swarna783/${project.artifactId}:second-service-s9</image>
                     </to>
                 </configuration>
             </plugin>

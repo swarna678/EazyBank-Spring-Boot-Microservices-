@@ -29,4 +29,13 @@ http://localhost:8080/actuator/shutdown for shutdown without killling process us
 http://localhost:8070 for eurekaserver
 http://localhost:8070/eureka/apps for eurekaserverinstances in xmlformat
 
+Postman or browser calls →
+http://localhost:8072/accounts/api/create
+
+8072 → Gateway Server port.
+
+ACCOUNTS → the service name you registered in Eureka (from your accounts microservice).
+
+/api/create → actual API endpoint inside the accounts service
+
 

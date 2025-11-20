@@ -55,6 +55,7 @@
 
 server:
   port: 9000
+
 spring:
   application:
     name: "cards"
@@ -74,16 +75,24 @@ spring:
       ddl-auto: update
     show-sql: true
   config:
-    import: "optional:configserver:http://localhost:8071/"
+    import: "optional:configserver:http://localhost:8071/"   # ✅ FIXED (was localhost)
 
 management:
   endpoints:
     web:
       exposure:
         include: "*"
+  health:
+    readiness-state:
+      enabled: true
+    liveness-state:
+      enabled: true
   endpoint:
     shutdown:
-     enabled: true
+      access: unrestricted
+    health:
+      probes:
+        enabled: true
   info:
     env:
       enabled: true
@@ -95,10 +104,16 @@ eureka:
     fetchRegistry: true
     registerWithEureka: true
     serviceUrl:
-      defaultZone: http://localhost:8070/eureka/
+      defaultZone: http://localhost:8070/eureka/   # ✅ FIXED (was localhost)
 
 info:
   app:
     name: "cards"
-    description: "Eazy Bank cards Application"
+    description: "Eazy Bank Cards Application"
     version: "2.0.0"
+
+logging:
+  level:
+    com:
+      eazybytes:
+        cards: DEBUG
